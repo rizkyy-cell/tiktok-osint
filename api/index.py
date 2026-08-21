@@ -1,13 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask
 
-app = Flask(__name__, template_folder='../templates')
+app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return "✅ Server berjalan! Silakan lanjut ke tahap 2."
 
 @app.route('/api/health')
 def health():
-    return {"status": "ok", "message": "Server berjalan!"}
-
-# Untuk Vercel, tidak perlu app.run()
+    return {"status": "ok"}
